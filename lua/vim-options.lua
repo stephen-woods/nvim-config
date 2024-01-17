@@ -1,3 +1,5 @@
+local opts = { noremap = true, silent =true }
+
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
@@ -10,6 +12,13 @@ vim.keymap.set('n', '<c-k>', ':wincmd k<CR>',{})
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>',{})
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>',{})
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>',{})
+
+
+-- Resize with arrows when using multiple windows
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<c-down>", ":resize +2<cr>", opts)
+vim.keymap.set("n", "<c-right>", ":vertical resize -2<cr>", opts)
+vim.keymap.set("n", "<c-left>", ":vertical resize +2<cr>", opts)
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', {})
 vim.wo.number = true
@@ -47,6 +56,15 @@ vim.keymap.set('n', '<leader>fz', '<cmd> Telescope current_buffer_fuzzy_find <CR
 vim.keymap.set('n', '<leader>cm', '<cmd> Telescope git_commits <CR>')
 vim.keymap.set('n', '<leader>gt', '<cmd> Telescope git_status <CR>')
 vim.keymap.set('n', '<leader>ma', '<cmd> Telescope marks <CR>')
+
+vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
+vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+
+
+
 
 
 
