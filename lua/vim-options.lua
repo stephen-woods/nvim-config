@@ -15,3 +15,4 @@ vim.wo.number = true
 
 -- NVimTree
 vim.keymap.set('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', {})
+
