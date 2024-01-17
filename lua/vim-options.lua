@@ -23,9 +23,20 @@ vim.keymap.set({'n','v'},'<C-b>','<C-b>zz')
 vim.keymap.set({'n','v'},'<C-d>','<C-d>zz')
 vim.keymap.set({'n','v'},'<C-u>','<C-u>zz')
 
+-- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
+-- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+-- empty mode is same as using <cmd> :map
+-- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
+vim.keymap.set({'n', 'v'}, 'j', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true}) 
+vim.keymap.set({'n', 'v'}, 'k', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true}) 
+vim.keymap.set({'n', 'v'}, '<Down>', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true}) 
+vim.keymap.set({'n', 'v'}, '<Up>', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true}) 
+
+
 vim.keymap.set('n', '<leader>n', '<cmd> set nu! <CR>')
 vim.keymap.set('n', '<leader>rn', '<cmd> set rnu! <CR>')
 
+-- Telescope
 vim.keymap.set('n', '<leader>ff', '<cmd> Telescope find_files <CR>')
 vim.keymap.set('n', '<leader>fa', '<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>')
 vim.keymap.set('n', '<leader>fw', '<cmd> Telescope live_grep <CR>')
@@ -36,3 +47,8 @@ vim.keymap.set('n', '<leader>fz', '<cmd> Telescope current_buffer_fuzzy_find <CR
 vim.keymap.set('n', '<leader>cm', '<cmd> Telescope git_commits <CR>')
 vim.keymap.set('n', '<leader>gt', '<cmd> Telescope git_status <CR>')
 vim.keymap.set('n', '<leader>ma', '<cmd> Telescope marks <CR>')
+
+
+
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
