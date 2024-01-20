@@ -36,4 +36,9 @@ return {
       })
     end,
   },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^3', -- Recommended
+    ft = { 'rust' },
+  }
 }
