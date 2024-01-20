@@ -1,5 +1,9 @@
 return {
   {
+    "folke/neodev.nvim",
+    opts = {},
+  },
+  {
     "williamboman/mason.nvim",
     lazy = false,
     config = function()
@@ -16,6 +20,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     lazy = false,
+    dependencies = { "folke/neodev.nvim" },
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
