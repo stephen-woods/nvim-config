@@ -1,4 +1,4 @@
-local opts = { noremap = true, silent =true }
+local opts = { noremap = true, silent = true }
 
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
@@ -8,10 +8,10 @@ vim.cmd("set rnu")
 vim.g.mapleader = " "
 
 -- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>',{})
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>',{})
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>',{})
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>',{})
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', {})
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>', {})
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', {})
 
 
 -- Resize with arrows when using multiple windows
@@ -24,26 +24,26 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', {})
 vim.wo.number = true
 
 -- NVimTree
-vim.keymap.set('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', {})
+vim.keymap.set('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', { desc = 'NVimTree Toggle' })
 
 -- Remap page forard/backward to center cursor in the middle of the screen
-vim.keymap.set({'n','v'},'<C-f>','<C-f>zz')
-vim.keymap.set({'n','v'},'<C-b>','<C-b>zz')
-vim.keymap.set({'n','v'},'<C-d>','<C-d>zz')
-vim.keymap.set({'n','v'},'<C-u>','<C-u>zz')
+vim.keymap.set({ 'n', 'v' }, '<C-f>', '<C-f>zz', { desc = 'Page down' })
+vim.keymap.set({ 'n', 'v' }, '<C-b>', '<C-b>zz', { desc = 'Page up' })
+vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz', { desc = 'Half page down' })
+vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz', { desc = 'Half page up' })
 
 -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
 -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
 -- empty mode is same as using <cmd> :map
 -- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
-vim.keymap.set({'n', 'v'}, 'j', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true}) 
-vim.keymap.set({'n', 'v'}, 'k', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true}) 
-vim.keymap.set({'n', 'v'}, '<Down>', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true}) 
-vim.keymap.set({'n', 'v'}, '<Up>', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true}) 
+vim.keymap.set({ 'n', 'v' }, 'j', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true })
+vim.keymap.set({ 'n', 'v' }, 'k', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true })
+vim.keymap.set({ 'n', 'v' }, '<Down>', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = 'Down', expr = true })
+vim.keymap.set({ 'n', 'v' }, '<Up>', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = 'Up', expr = true })
 
 
-vim.keymap.set('n', '<leader>n', '<cmd> set nu! <CR>')
-vim.keymap.set('n', '<leader>rn', '<cmd> set rnu! <CR>')
+vim.keymap.set('n', '<leader>n', '<cmd> set nu! <CR>', { desc = 'Toggle line numbers' })
+vim.keymap.set('n', '<leader>rn', '<cmd> set rnu! <CR>', { desc = 'Toggle reverse line numbers' })
 
 -- Telescope
 vim.keymap.set('n', '<leader>ff', '<cmd> Telescope find_files <CR>')

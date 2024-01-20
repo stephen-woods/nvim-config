@@ -1,8 +1,8 @@
 return {
   "nvim-tree/nvim-web-devicons",
-  config = function () 
+  config = function()
     require("nvim-web-devicons").setup(
-    {
+      {
         default_icon = {
           icon = "󰈚",
           name = "Default",
@@ -148,7 +148,7 @@ return {
           name = "zip",
         },
       }
-    
+
     )
   end
 
