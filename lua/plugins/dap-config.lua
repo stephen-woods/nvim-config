@@ -1,5 +1,4 @@
 return {
-  "nvim-lua/plenary.nvim",
   {
     "mfussenegger/nvim-dap",
     config = function(self, opts)
