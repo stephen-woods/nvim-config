@@ -46,17 +46,17 @@ vim.keymap.set('n', '<leader>n', '<cmd> set nu! <CR>', { desc = 'Toggle line num
 vim.keymap.set('n', '<leader>rn', '<cmd> set rnu! <CR>', { desc = 'Toggle reverse line numbers' })
 
 -- Telescope
-vim.keymap.set('n', '<leader>ff', '<cmd> Telescope find_files <CR>')
-vim.keymap.set('n', '<leader>fa', '<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>')
+vim.keymap.set('n', '<leader>ff', '<cmd> Telescope find_files <CR>', { desc = 'Telescope find files'})
+vim.keymap.set('n', '<leader>fa', '<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>', { desc = 'Telescope find all files'} )
 vim.keymap.set('n', '<leader>fw', '<cmd> Telescope live_grep <CR>')
-vim.keymap.set('n', '<leader>fb', '<cmd> Telescope buffers <CR>')
-vim.keymap.set('n', '<leader>fo', '<cmd> Telescope oldfiles <CR>')
-vim.keymap.set('n', '<leader>fz', '<cmd> Telescope current_buffer_fuzzy_find <CR>')
+vim.keymap.set('n', '<leader>fb', '<cmd> Telescope buffers <CR>', { desc = 'Telescope find buffers'})
+vim.keymap.set('n', '<leader>fo', '<cmd> Telescope oldfiles <CR>', { desc = 'Telescope find old files'} )
+vim.keymap.set('n', '<leader>fz', '<cmd> Telescope current_buffer_fuzzy_find <CR>', { desc = 'Telescope current buffer fuzzy'})
 
-vim.keymap.set('n', '<leader>fc', '<cmd> Telescope git_commits <CR>')
-vim.keymap.set('n', '<leader>fg', '<cmd> Telescope git_status <CR>')
-vim.keymap.set('n', '<leader>fm', '<cmd> Telescope marks <CR>')
-vim.keymap.set('n', '<leader>fs', '<cmd> Telescope lsp_document_symbols <CR>')
+vim.keymap.set('n', '<leader>fc', '<cmd> Telescope git_commits <CR>', { desc = 'Telescope git commits'})
+vim.keymap.set('n', '<leader>fg', '<cmd> Telescope git_status <CR>', { desc = 'Telescope git status'})
+vim.keymap.set('n', '<leader>fm', '<cmd> Telescope marks <CR>', { desc = 'Telescope marks'})
+vim.keymap.set('n', '<leader>fs', '<cmd> Telescope lsp_document_symbols <CR>', { desc = 'Telescope LSP document symbols'})
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
