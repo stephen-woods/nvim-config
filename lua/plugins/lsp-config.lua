@@ -141,6 +141,10 @@ return {
         map("n", "<leader>dl", function()
           require("dap").run_last()
         end)
+
+        map("n", "<leader>mc", function ()
+          require("telescope").extensions.metals.commands()
+        end)
       end
 
       return metals_config
