@@ -24,7 +24,7 @@ return {
           preserve_window_proportions = true,
         },
         git = {
-          enable = false,
+          enable = true,
           ignore = true,
         },
         filesystem_watchers = {
@@ -37,7 +37,7 @@ return {
         },
         renderer = {
           root_folder_label = false,
-          highlight_git = false,
+          highlight_git = true,
           highlight_opened_files = "none",
 
           indent_markers = {
@@ -49,7 +49,7 @@ return {
               file = true,
               folder = true,
               folder_arrow = true,
-              git = false,
+              git = true,
             },
 
             glyphs = {
