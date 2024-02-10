@@ -1,7 +1,9 @@
 return {
   {
     "folke/neodev.nvim",
-    opts = {},
+    opts = {
+      library = { plugins = { "nvim-dap-ui" }, types = true },
+    },
   },
   {
     "williamboman/mason.nvim",
@@ -50,7 +52,7 @@ return {
   },
   {
     "scalameta/nvim-metals",
-    ft = {"scala", "sbt"},
+    ft = {"scala", "sbt", "java"},
     dependencies = "nvim-lua/plenary.nvim",
         opts = function()
       local metals_config = require("metals").bare_config()
