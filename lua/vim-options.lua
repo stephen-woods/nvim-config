@@ -58,7 +58,7 @@ vim.keymap.set('n', '<leader>fz', '<cmd> Telescope current_buffer_fuzzy_find <CR
 vim.keymap.set('n', '<leader>fc', '<cmd> Telescope git_commits <CR>', { desc = 'Telescope git commits'})
 vim.keymap.set('n', '<leader>fg', '<cmd> Telescope git_status <CR>', { desc = 'Telescope git status'})
 vim.keymap.set('n', '<leader>fm', '<cmd> Telescope marks <CR>', { desc = 'Telescope marks'})
-vim.keymap.set('n', '<leader>fs', '<cmd> Telescope lsp_document_symbols <CR>', { desc = 'Telescope LSP document symbols'})
+vim.keymap.set('n', '<leader>fs', '<cmd> Telescope lsp_dynamic_workspace_symbols <CR>', { desc = 'Telescope LSP dynamic workspace symbols'})
 
 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
