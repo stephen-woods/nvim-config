@@ -27,31 +27,31 @@ return {
 
       map("n", "<leader>dc", function()
         dap.continue()
-      end)
+      end, { desc = "DAP continue" } )
 
       map("n", "<leader>dr", function()
         dap.repl.toggle()
-      end)
+      end, { desc = "DAP REPL toggle" } )
 
       map("n", "<leader>dK", function()
         require("dap.ui.widgets").hover()
-      end)
+      end, { desc = "DAP UI Info" } )
 
       map("n", "<leader>dt", function()
         dap.toggle_breakpoint()
-      end)
+      end, { desc = "DAP toggle breakpoint" } )
 
       map("n", "<leader>dso", function()
         dap.step_over()
-      end)
+      end, { desc = "DAP step over" } )
 
       map("n", "<leader>dsi", function()
         dap.step_into()
-      end)
+      end, { desc = "DAP step into" } )
 
       map("n", "<leader>dl", function()
         dap.run_last()
-      end)
+      end, { desc = "DAP run last" } )
 
       dap.configurations.scala = {
         {

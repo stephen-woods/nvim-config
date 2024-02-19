@@ -60,6 +60,13 @@ vim.keymap.set('n', '<leader>fg', '<cmd> Telescope git_status <CR>', { desc = 'T
 vim.keymap.set('n', '<leader>fm', '<cmd> Telescope marks <CR>', { desc = 'Telescope marks'})
 vim.keymap.set('n', '<leader>fs', '<cmd> Telescope lsp_dynamic_workspace_symbols <CR>', { desc = 'Telescope LSP dynamic workspace symbols'})
 
+
+vim.keymap.set('n', '<leader>fdc', '<cmd> Telescope dap commands <CR>', { desc = 'Telescope dap commands'})
+vim.keymap.set('n', '<leader>fdx', '<cmd> Telescope dap configurations <CR>', { desc = 'Telescope dap configurations'})
+vim.keymap.set('n', '<leader>fdb', '<cmd> Telescope dap list_breakpoints <CR>', { desc = 'Telescope dap list breakpoints'})
+vim.keymap.set('n', '<leader>fdv', '<cmd> Telescope dap variables <CR>', { desc = 'Telescope dap variables'})
+vim.keymap.set('n', '<leader>fdf', '<cmd> Telescope dap frames <CR>', { desc = 'Telescope dap frames'})
+
 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)

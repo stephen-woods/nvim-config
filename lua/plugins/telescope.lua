@@ -7,6 +7,9 @@ return {
     build = 'make',
   },
   {
+    "nvim-telescope/telescope-dap.nvim",
+  },
+  {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
     dependencies = {
@@ -78,6 +81,7 @@ return {
       }
       require("telescope").load_extension("ui-select")
       require("telescope").load_extension("fzf")
+      require("telescope").load_extension("dap")
     end,
   },
   {
