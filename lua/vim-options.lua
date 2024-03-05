@@ -1,26 +1,68 @@
 local opts = { noremap = true, silent = true }
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set rnu")
-vim.opt_global.completeopt = { "menuone", "noinsert", "noselect", "preview" }
-
+-- Set <space> as the leader key
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- Show relative line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- Sync clipboard between OS and Neovim
+vim.opt.clipboard = 'unnamedplus'
+
+-- Enable break indent
+vim.opt.breakindent = true
+
+-- Save undo history
+vim.opt.undofile = true
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Keep signcolumn on by default. Ensure there is enough columns
+vim.opt.signcolumn = 'yes:1'
+
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Sets how neovim will display certain whitspace in the editor
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Preview substitutions live as you type
+vim.opt.inccommand = 'split'
+
+-- Minimal number of screen lines to keep above and below the cursor
+vim.opt.scrolloff = 10
+
+-- Set highlight on search, but clear on pressing <esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd> nohlsearch <CR>', { desc = 'Clear highlighted searcher' } )
+
+-- Use appropriate number of spaces to insert a tab
+vim.opt.expandtab = true
+
+-- Number of spaces to use for each tab
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+-- vim.opt_global.completeopt = { "menuone", "noinsert", "noselect", "preview" }
+
+-- TIP: Disable arrow keys in normal mode 
+-- FIXME Up and Down do not work
+vim.keymap.set('n', '<Left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<Right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<Up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<Down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', {})
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>', {})
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', {})
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', {})
-
-
--- Resize with arrows when using multiple windows
-vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
-vim.keymap.set("n", "<c-down>", ":resize +2<cr>", opts)
-vim.keymap.set("n", "<c-right>", ":vertical resize -2<cr>", opts)
-vim.keymap.set("n", "<c-left>", ":vertical resize +2<cr>", opts)
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', {})
 vim.wo.number = true
