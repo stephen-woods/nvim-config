@@ -24,7 +24,8 @@ return {
     lazy = false,
     dependencies = { "folke/neodev.nvim" },
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local lspconfig = require("lspconfig")
       lspconfig.tsserver.setup({
@@ -33,15 +34,30 @@ return {
       lspconfig.html.setup({
         capabilities = capabilities
       })
+
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
         settings = {
           Lua = {
+            runtime = {
+              version = "LuaJIT",
+            },
             diagnostics = {
-              properties = {
-                globals = { "vim" }
+              globals = { "vim" },
+            },
+            telemetry = {
+              enable = false,
+            },
+            workspace = {
+              checkThirdParty = false,
+              library = {
+                '${3rd}/luv/library',
+                unpack(vim.api.nvim_get_runtime_file('', true)),
               }
-            }
+            },
+            completion = {
+              callSnippet = 'Replace',
+            },
           }
         }
       })

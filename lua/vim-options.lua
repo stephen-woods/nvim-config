@@ -4,9 +4,12 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Show relative line numbers
+-- Show relative line numbers - turned off right now
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
+
+-- Show line number for current line
+vim.wo.number = true
 
 -- Sync clipboard between OS and Neovim
 vim.opt.clipboard = 'unnamedplus'
@@ -65,7 +68,6 @@ vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', {})
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', {})
-vim.wo.number = true
 
 -- NVimTree
 vim.keymap.set('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', { desc = 'NVimTree Toggle' })
