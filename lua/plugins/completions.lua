@@ -7,10 +7,12 @@ return {
       "hrsh7th/cmp-nvim-lua",
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
+      "onsails/lspkind.nvim",
     },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+      local lspkind = require("lspkind")
       require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
@@ -56,13 +58,30 @@ return {
             end
           end, { 'i', 's' }),
         }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" }, -- For luasnip users.
-          { name = 'path' },
-        }, {
-          { name = "buffer" },
-        }),
+        sources = cmp.config.sources(
+          {
+            { name = "nvim_lua" },
+            { name = "nvim_lsp" },
+            { name = "luasnip" },
+            { name = 'path' },
+          }, {
+            { name = "buffer", keyword_length = 4 },
+          }
+        ),
+        formatting = {
+          -- This annotates each snippet suggestion with the kind of 
+          -- completion (where it came from)
+          format = lspkind.cmp_format {
+            with_text = true,
+            menu = {
+              buffer = "[buf]",
+              nvim_lsp = "[LSP]",
+              nvim_lua = "[api]",
+              path = "[path]",
+              luasnip = "[snip]",
+            },
+          },
+        }
       })
     end,
   },
