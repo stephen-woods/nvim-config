@@ -20,6 +20,24 @@ return {
     },
   },
   {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    config = function ()
+      require("mason-tool-installer").setup {
+        ensure_installed = {
+          "black",
+          "lua_ls",
+          "rust_analyzer",
+          "tsserver",
+          "pyright",
+          "codelldb",
+          "mypy",
+          "ruff",
+          "debugpy",
+        },
+      }
+    end
+  },
+  {
     "neovim/nvim-lspconfig",
     lazy = false,
     dependencies = { "folke/neodev.nvim" },
@@ -31,6 +49,7 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities
       })
+
       lspconfig.html.setup({
         capabilities = capabilities
       })
@@ -51,6 +70,7 @@ return {
             workspace = {
               checkThirdParty = false,
               library = {
+                vim.env.VIMRUNTIME,
                 '${3rd}/luv/library',
                 unpack(vim.api.nvim_get_runtime_file('', true)),
               }
@@ -60,6 +80,23 @@ return {
             },
           }
         }
+      })
+
+      lspconfig.pyright.setup({
+        capabilities = capabilities,
+        filetypes = { "python" },
+      })
+    end,
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    config = function ()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.black,
+          null_ls.builtins.diagnostics.mypy,
+        },
       })
     end,
   },
