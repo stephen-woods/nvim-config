@@ -86,6 +86,13 @@ return {
         capabilities = capabilities,
         filetypes = { "python" },
       })
+
+      lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+        settings = {
+          rust_analyzer = {}
+        }
+      })
     end,
   },
   {
@@ -136,8 +143,9 @@ return {
 
         -- LSP mappings
         local map = vim.keymap.set
-        map("n", "gD", vim.lsp.buf.definition, { desc = "LSP jump to symbol definition" })
         map("n", "K", vim.lsp.buf.hover, { desc = "LSP display symbol information" })
+        map("n", "gD", vim.lsp.buf.declaration, { desc = "LSP jump to symbol declaration" })
+        map("n", "gd", vim.lsp.buf.definition, { desc = "LSP jump to symbol definition" })
         map("n", "gi", vim.lsp.buf.implementation, { desc = "LSP list all implementations" })
         map("n", "gr", vim.lsp.buf.references, { desc = "LSP list all references" })
         map("n", "gds", vim.lsp.buf.document_symbol, { desc = "LSP display all symbols in buffer" })
