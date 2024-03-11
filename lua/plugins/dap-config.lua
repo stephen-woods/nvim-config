@@ -25,29 +25,38 @@ return {
       end
 
 
-      map("n", "<leader>dc", function()
+      map("n", "<F5>", function()
         dap.continue()
-      end, { desc = "DAP continue" } )
+      end, { desc = "Debug: Start/Continue" } )
 
-      map("n", "<leader>dr", function()
+      map("n", "<F4>", function()
         dap.repl.toggle()
-      end, { desc = "DAP REPL toggle" } )
+      end, { desc = "Debug: REPL toggle" } )
 
       map("n", "<leader>dK", function()
         require("dap.ui.widgets").hover()
-      end, { desc = "DAP UI Info" } )
+      end, { desc = "Debug: UI Info" } )
 
-      map("n", "<leader>dt", function()
+      map("n", "<leader>b", function()
         dap.toggle_breakpoint()
-      end, { desc = "DAP toggle breakpoint" } )
+      end, { desc = "Debug: [B]reakpoint toggle" } )
 
-      map("n", "<leader>dso", function()
-        dap.step_over()
-      end, { desc = "DAP step over" } )
+      map("n", "<leader>B", function()
+        dap.set_breakpoint(vim.fn.input 'Breakpoint conidition: ')
+      end, { desc = "Debug: [B]reakpoint condition" } )
 
-      map("n", "<leader>dsi", function()
+      map("n", "<F1>", function()
         dap.step_into()
-      end, { desc = "DAP step into" } )
+      end, { desc = "Debug: step into" } )
+
+      map("n", "<F2>", function()
+        dap.step_over()
+      end, { desc = "Debug: step over" } )
+
+      map("n", "<F3>", function()
+        dap.step_out()
+      end, { desc = "Debug: step out" } )
+
 
       map("n", "<leader>dl", function()
         dap.run_last()

@@ -17,8 +17,8 @@ vim.opt.clipboard = 'unnamedplus'
 -- Enable break indent
 vim.opt.breakindent = true
 
--- Save undo history
-vim.opt.undofile = true
+-- Save undo history. Disabling for now so we don't accidentally undo too much
+-- vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.opt.ignorecase = true
@@ -90,11 +90,6 @@ vim.keymap.set({ 'n', 'v' }, '<Up>', 'v:count || mode(1)[0:1] == "no" ? "k" : "g
 
 vim.keymap.set('n', '<leader>n', '<cmd> set nu! <CR>', { desc = 'Toggle line numbers' })
 vim.keymap.set('n', '<leader>rn', '<cmd> set rnu! <CR>', { desc = 'Toggle reverse line numbers' })
-
--- Telescope. New telescope mappings don't currently include these old ones. Maybe use them in the future
--- vim.keymap.set('n', '<leader>fz', '<cmd> Telescope current_buffer_fuzzy_find <CR>', { desc = 'Telescope current buffer fuzzy'})
--- vim.keymap.set('n', '<leader>fs', '<cmd> Telescope lsp_dynamic_workspace_symbols <CR>', { desc = 'Telescope LSP dynamic workspace symbols'})
-
 
 vim.keymap.set('n', '<leader>fdc', '<cmd> Telescope dap commands <CR>', { desc = 'Telescope dap commands'})
 vim.keymap.set('n', '<leader>fdx', '<cmd> Telescope dap configurations <CR>', { desc = 'Telescope dap configurations'})
