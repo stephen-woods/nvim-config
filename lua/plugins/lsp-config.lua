@@ -85,6 +85,12 @@ return {
       lspconfig.pyright.setup({
         capabilities = capabilities,
         filetypes = { "python" },
+        settings = {
+          pyright = {
+            autoImportCompletion = true,
+            verboseOutput = true,
+          }
+        }
       })
 
       lspconfig.rust_analyzer.setup({
