@@ -33,4 +33,10 @@ return {
       vim.cmd [[colorscheme catppuccin]]
     end
   },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function ()
+     require("nvim-highlight-colors").setup({})
+    end
+  }
 }

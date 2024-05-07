@@ -2,9 +2,11 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "L3MON4D3/LuaSnip",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
+      "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
       "onsails/lspkind.nvim",
@@ -63,6 +65,7 @@ return {
             { name = "nvim_lua" },
             { name = "nvim_lsp" },
             { name = "luasnip" },
+            { name = "buffer" },
             { name = 'path' },
           }, {
             { name = "buffer", keyword_length = 4 },

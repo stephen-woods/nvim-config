@@ -33,6 +33,7 @@ return {
           "mypy",
           "ruff",
           "debugpy",
+          "html-lsp",
         },
       }
     end
@@ -98,6 +99,10 @@ return {
         settings = {
           rust_analyzer = {}
         }
+      })
+
+      lspconfig.html.setup({
+        capabilities = capabilities,
       })
 
       vim.api.nvim_create_autocmd('LspAttach', {
