@@ -34,6 +34,7 @@ return {
           "ruff",
           "debugpy",
           "html-lsp",
+          "cssls",
         },
       }
     end
@@ -47,12 +48,17 @@ return {
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local lspconfig = require("lspconfig")
+
       lspconfig.tsserver.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
 
       lspconfig.html.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+      })
+
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
       })
 
       lspconfig.lua_ls.setup({
@@ -99,10 +105,6 @@ return {
         settings = {
           rust_analyzer = {}
         }
-      })
-
-      lspconfig.html.setup({
-        capabilities = capabilities,
       })
 
       vim.api.nvim_create_autocmd('LspAttach', {
