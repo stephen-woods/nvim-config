@@ -1,5 +1,11 @@
 return {
   {
+    "dcampos/cmp-emmet-vim",
+    dependencies = {
+      "mattn/emmet-vim",
+    }
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-buffer",
@@ -10,6 +16,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
       "onsails/lspkind.nvim",
+      "dcampos/cmp-emmet-vim",
     },
     config = function()
       local cmp = require("cmp")
@@ -67,6 +74,7 @@ return {
             { name = "luasnip" },
             { name = "buffer" },
             { name = 'path' },
+            { name = 'emmet_vim' }
           }, {
             { name = "buffer", keyword_length = 4 },
           }
