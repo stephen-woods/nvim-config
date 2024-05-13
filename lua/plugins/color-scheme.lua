@@ -30,6 +30,7 @@ return {
       }
     },
     init = function()
+      vim.o.termguicolors = true
       vim.cmd [[colorscheme catppuccin]]
     end
   },

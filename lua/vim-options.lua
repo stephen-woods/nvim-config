@@ -62,10 +62,10 @@ vim.keymap.set('n', '<Up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<Down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Navigate vim panes better
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>', {})
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>', {})
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>', {})
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>', {})
+vim.keymap.set('n', '<c-h>', ':TmuxNavigateLeft<CR>', { desc = 'Window left' })
+vim.keymap.set('n', '<c-j>', ':TmuxNavigateDown<CR>', { desc = 'Window down' })
+vim.keymap.set('n', '<c-k>', ':TmuxNavigateUp<CR>', { desc = 'Window up' })
+vim.keymap.set('n', '<c-l>', ':TmuxNavigateRight<CR>', { desc = 'Window right'})
 
 -- NVimTree
 vim.keymap.set('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', { desc = 'NVimTree Toggle' })
