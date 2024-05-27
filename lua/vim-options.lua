@@ -4,9 +4,9 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Show relative line numbers - turned off right now
+-- Show relative line numbers 
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- Show line number for current line
 vim.wo.number = true
@@ -79,7 +79,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Remap page forard/backward to center cursor in the middle of the screen
 vim.keymap.set({ 'n', 'v' }, '<C-f>', '<C-f>zz', { desc = 'Page down' })
-vim.keymap.set({ 'n', 'v' }, '<C-b>', '<C-b>zz', { desc = 'Page up' })
+vim.keymap.set({ 'n', 'v' }, '<C-b>', '<C-b>Hzz', { desc = 'Page up' })
 vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz', { desc = 'Half page down' })
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz', { desc = 'Half page up' })
 

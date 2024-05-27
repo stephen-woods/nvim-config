@@ -27,6 +27,13 @@ return {
           enabled = false,
           enable_ui = false,
         }
+      },
+      highlight_overrides = {
+        all = function(color)
+          return {
+            LineNr = { fg = color.flamingo },
+          }
+        end,
       }
     },
     init = function()
