@@ -9,8 +9,13 @@ return {
       ensure_installed = {
         "bash",
         "c",
+        "cmake",
+        "cpp",
+        "gitignore",
         "go",
+        "graphql",
         "html",
+        "http",
         "java",
         "javascript",
         "lua",
@@ -19,6 +24,8 @@ return {
         "query",
         "rust",
         "scala",
+        "sql",
+        "svelte",
         "vim",
         "vimdoc"
       },
@@ -27,6 +34,14 @@ return {
       highlight = { enable = true },
       indent = { enable = true },
     })
+
+    -- Handle MDX files as if they are markdown
+    vim.filetype.add({
+      extension = {
+        mdx = "mdx",
+      },
+    })
+    vim.treesitter.language.register("markdown", "mdx")
   end
 }
 
