@@ -1,15 +1,5 @@
 return {
   {
-    "folke/tokyonight.nvim",
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    init = function()
-      vim.cmd [[colorscheme tokyonight-night]]
-    end
-  },
-  {
     "catppuccin/nvim",
     lazy = false,
     name = "catppuccin",
@@ -41,10 +31,4 @@ return {
       vim.cmd [[colorscheme catppuccin]]
     end
   },
-  {
-    "brenoprata10/nvim-highlight-colors",
-    config = function ()
-     require("nvim-highlight-colors").setup({})
-    end
-  }
 }

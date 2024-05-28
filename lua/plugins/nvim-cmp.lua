@@ -1,11 +1,5 @@
 return {
   {
-    "dcampos/cmp-emmet-vim",
-    dependencies = {
-      "mattn/emmet-vim",
-    }
-  },
-  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-buffer",

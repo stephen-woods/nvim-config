@@ -1,12 +1,6 @@
 return {
   {
-    "nvim-neotest/nvim-nio"
-  },
-  {
     "mfussenegger/nvim-dap",
-    dependencies = {
-      "rcarriga/nvim-dap-ui",
-    },
     config = function()
       local map = vim.keymap.set
       local dap = require("dap")
@@ -85,17 +79,5 @@ return {
         },
       }
     end
-  },
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-    },
-    -- config = function ()
-    --   -- The virtual environment path of our debugpy instance
-    --   local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-    --   require("dap-python").setup(path)
-    -- end
   },
 }
