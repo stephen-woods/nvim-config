@@ -17,6 +17,14 @@ vim.opt.clipboard = 'unnamedplus'
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Enable US English spell check.
+-- Use ]s will go to the next misspelled word
+-- Use [s will go to the previous misspelled word
+-- Use z= to open list of suggestions
+-- Use zg to add word to dictionary
+vim.opt.spell = true
+vim.opt.spelllang = 'en_us'
+
 -- Save undo history. Disabling for now so we don't accidentally undo too much
 -- vim.opt.undofile = true
 
