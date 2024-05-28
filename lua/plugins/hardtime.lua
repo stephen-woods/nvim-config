@@ -12,8 +12,32 @@ return {
       -- makes sense, especially if you need to traverse within a long 
       -- word
       max_count = 10,
-      -- Disable hardtime in additional filetypes
+      -- Disable hardtime filetypes (includes defaults)
       disabled_filetypes = {
+        "NvimTree",
+        "TelescopePrompt",
+        "aerial",
+        "alpha",
+        "checkhealth",
+        "dapui*",
+        "Diffview*",
+        "Dressing*",
+        "help",
+        "httpResult",
+        "lazy",
+        "Neogit*",
+        "mason",
+        "neotest-summary",
+        "minifiles",
+        "neo-tree*",
+        "netrw",
+        "noice",
+        "notify",
+        "prompt",
+        "qf",
+        "oil",
+        "undotree",
+        "Trouble",
         "lspinfo",
       }
     },
