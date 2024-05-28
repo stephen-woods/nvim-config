@@ -54,13 +54,6 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 -- vim.opt_global.completeopt = { "menuone", "noinsert", "noselect", "preview" }
 
--- TIP: Disable arrow keys in normal mode 
--- FIXME Up and Down do not work
-vim.keymap.set('n', '<Left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<Right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<Up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<Down>', '<cmd>echo "Use j to move!!"<CR>')
-
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-h>', ':TmuxNavigateLeft<CR>', { desc = 'Window left' })
 vim.keymap.set('n', '<c-j>', ':TmuxNavigateDown<CR>', { desc = 'Window down' })
