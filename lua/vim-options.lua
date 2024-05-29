@@ -132,3 +132,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Disable Perl provider
+vim.g.loaded_perl_provider = 0
+
+-- Disable Python 2 provider
+vim.g.loaded_python_provider = 0
+
+-- Disable Python 3 provider
+vim.g.loaded_python3_provider = 0
+
+-- Disable Ruby provider
+vim.g.loaded_ruby_provider = 0
+
+-- Disable Node.js provider
+vim.g.loaded_node_provider = 0
